@@ -7,8 +7,6 @@ pipeline {
 
     environment {
         APP_NAME = 'ola-mundo'
-        TOMCAT_SERVER = '172.17.0.2'
-        TOMCAT_PORT = '9090'
         WAR_FILE = 'target/ola-mundo.war' // Caminho do .war gerado pelo build
     }
 
@@ -37,7 +35,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "${WAR_FILE}",
-                                    remoteDirectory: "${TOMCAT_VOLUME}/webapps"
+                                    remoteDirectory: "/usr/local/tomcat/webapps"
                                 )
                             ],
                             usePromotionTimestamp: false,
