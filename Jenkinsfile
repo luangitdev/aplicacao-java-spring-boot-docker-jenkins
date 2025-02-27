@@ -35,7 +35,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "${WAR_FILE}"
-                                    //remoteDirectory: "/usr/local/tomcat/webapps"
+                                    remoteDirectory: "/usr/local/tomcat/webapps"
                                 )
                             ],
                             usePromotionTimestamp: false,
