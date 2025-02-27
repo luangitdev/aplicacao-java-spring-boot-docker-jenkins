@@ -31,7 +31,7 @@ pipeline {
                 sshPublisher(
                     publishers: [
                         sshPublisherDesc(
-                            configName: 'Servidor-Tomcat', // Configuração SSH no Jenkins
+                            configName: 'servidor-tomcat', // Configuração SSH no Jenkins
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "${WAR_FILE}",
