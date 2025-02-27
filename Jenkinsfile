@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_NAME = 'ola-mundo'
         TOMCAT_SERVER = '172.17.0.2'
-        TOMCAT_PORT = '8080'
+        TOMCAT_PORT = '9090'
         WAR_FILE = 'target/ola-mundo.war' // Caminho do .war gerado pelo build
     }
 
