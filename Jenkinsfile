@@ -34,8 +34,8 @@ pipeline {
                             configName: 'servidor-tomcat', // Configuração SSH no Jenkins
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: "${WAR_FILE}",
-                                    remoteDirectory: "/usr/local/tomcat/webapps"
+                                    sourceFiles: "${WAR_FILE}"
+                                    //remoteDirectory: "/usr/local/tomcat/webapps"
                                 )
                             ],
                             usePromotionTimestamp: false,
