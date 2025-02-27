@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven' // Use o Maven configurado no Jenkins
+    }
+
     environment {
         APP_NAME = 'ola-mundo'
         TOMCAT_SERVER = '172.17.0.2'
