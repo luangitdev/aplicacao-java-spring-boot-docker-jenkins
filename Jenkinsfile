@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         APP_NAME = 'ola-mundo'
-        WAR_FILE = 'target/ola-mundo.war' // Caminho do .war gerado pelo build
+        WAR_FILE = 'target/ola-mundo-1.0-SNAPSHOT.war' // Caminho do .war gerado pelo build
     }
 
     stages {
