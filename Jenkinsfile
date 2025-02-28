@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         APP_NAME = 'ola-mundo'
-        WAR_FILE = 'target/ola-mundo-1.0-SNAPSHOT.war' // Caminho do .war gerado pelo build
+        WAR_FILE = "target/${APP_NAME}-1.0-SNAPSHOT.war" // Caminho do arquivo gerado pelo Maven
     }
 
     stages {
@@ -35,7 +35,8 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "${WAR_FILE}",
-                                    remoteDirectory: "/usr/local/tomcat/webapps"
+                                    remoteDirectory: "/usr/local/tomcat/webapps", // Caminho correto
+                                    removePrefix: "target" // Evita que o arquivo vá para uma subpasta
                                 )
                             ],
                             usePromotionTimestamp: false,
