@@ -35,7 +35,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     sourceFiles: "${WAR_FILE}",
-                                    remoteDirectory: "/usr/local/tomcat/webapps", // Caminho correto
+                                    remoteDirectory: "", // Vazio pois ja defini no remoteDirectory do Publish Over SSH
                                     removePrefix: "target" // Evita que o arquivo vá para uma subpasta
                                 )
                             ],
