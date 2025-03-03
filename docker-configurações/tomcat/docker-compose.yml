@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  tomcat-server:
+    build:
+      context: ./tomcat  # Diretório onde está o Dockerfile
+      dockerfile: Dockerfile  # Nome do Dockerfile
+    image: ssh-tomcat:9.0
+    ports:
+      - "9090:8080"
+      - "2222:22"
+    volumes:
+      - tomcat_9090:/usr/local/tomcat/webapps
+      - ./tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      - ./tomcat/manager:/usr/local/tomcat/webapps/manager
+    networks:
+      - app-network
+
+volumes:
+  tomcat_9090:
+
+networks:
+  app-network:
+    driver: bridge
